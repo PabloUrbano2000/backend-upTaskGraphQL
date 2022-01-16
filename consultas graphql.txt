@@ -1,0 +1,113 @@
+-- CREACION DE USUARIOS
+mutation {
+  crearUsuario(input: {
+    nombre:"Pablo"
+    email:"correo@correo.com"
+    password:"12345678"
+  })
+}
+
+-- AUTENTICACION DE USUARIOS
+mutation {
+  autenticarUsuario(input: {
+    email:"plas@asdsd.com"
+    password:"12345678"
+  }){
+    token
+  }
+}
+
+-- CREACION DE PROYECTOS
+mutation {
+  nuevoProyecto(input:{
+    nombre:"Pablo Proyecto"
+  }){
+   id
+   nombre
+  }
+}
+EN HEADERS AGREGAR: Authorization - ...token...
+
+
+-- ACTUALIZACION DE PROYECTOS:
+mutation {
+  actualizarProyecto(
+    id:"61e218dfc67b9647cdb13ea3",
+    input:{
+    nombre:"Pablo Proyecto Actualizado"
+    }
+  ){
+   id
+   nombre
+  }
+}
+EN HEADERS AGREGAR: Authorization - ...token...
+
+
+-- OBTENER O CONSULTAR PROYECTOS DE UN USUARIO
+query {
+  obtenerProyectos {
+    id
+    nombre
+  }
+}
+
+EN HEADERS AGREGAR: Authorization - ...token...
+
+
+-- ELIMINAR PROYECTO
+mutation {
+  eliminarProyecto(id: "61e21eaae69eb75681cf0419")
+}
+EN HEADERS AGREGAR: Authorization - ...token...
+
+
+-- INSERTAR TAREA
+mutation {
+  nuevaTarea (input:{
+    nombre:"llamar callcenter proyecto 2"
+    proyecto:"61e21ea5e69eb75681cf0417"
+  }){
+    id
+    nombre
+    proyecto
+    estado
+  }
+}
+EN HEADERS AGREGAR: Authorization - ...token...
+
+mutation {
+  actualizarTarea(
+    id:"61e226b885bf783b8d784065",
+    input:{
+      nombre: "llamar callcenter proyecto 2 ACTUALIZADO"
+      proyecto: "61e21ea5e69eb75681cf0417"
+    },
+    estado:true
+  ){
+    id
+    nombre
+    proyecto
+    estado
+  }
+}
+EN HEADERS AGREGAR: Authorization - ...token...
+
+-- OBTENER TAREAS POR PROYECTO
+query {
+  obtenerTareas (input: {
+    proyecto:"61e21ea5e69eb75681cf0417"
+  }) {
+    id
+    nombre
+    proyecto
+    estado
+  }
+}
+EN HEADERS AGREGAR: Authorization - ...token...
+
+-- ELIMINAR TAREA
+mutation{
+  eliminarTarea(id: "61e226b085bf783b8d784063")
+}
+EN HEADERS AGREGAR: Authorization - ...token...

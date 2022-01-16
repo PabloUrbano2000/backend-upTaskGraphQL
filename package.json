@@ -1,0 +1,25 @@
+{
+  "name": "upTaskGraphQL",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "keywords": [],
+  "author": "Pablo Urbano <pablojamiro2008@hotmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.6.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^11.0.0",
+    "graphql": "^16.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
